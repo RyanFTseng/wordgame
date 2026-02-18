@@ -7,6 +7,7 @@
 #include <algorithm>
 
 
+//check if word is in a vector
 bool vector_contains_word(const std::vector<std::string>& vec, const std::string& word) 
 {
 	for (const auto& w : vec)
@@ -19,6 +20,7 @@ bool vector_contains_word(const std::vector<std::string>& vec, const std::string
 	return false;
 }
 
+//init buckets for score calculation
 std::vector<int> fill_buckets(const std::string& word)
 {
 	std::vector<int> buckets(26, 0);
@@ -30,6 +32,7 @@ std::vector<int> fill_buckets(const std::string& word)
 }
 
 
+//score calculation
 int score_match(const std::string& word1, const std::string& word2)
 {
 	const auto buckets1 = fill_buckets(word1);
